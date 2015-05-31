@@ -1,0 +1,63 @@
+<!-- / = form_for @user do |f|
+/   %p
+/     =f.label :name
+/     =f.text_field :name, :autofocus => true
+/   %p
+/     =f.label :instruments
+/     =f.text_field :instruments, :autofocus => true
+/   %p
+/     =f.label :interests
+/     =f.label :interests
+/   %p
+/     =f.label :password
+/     =f.password_field :password
+/   %p
+/     =f.label :password_confirmation
+/     =f.password_field :password_confirmation
+/   %p
+/     =f.label :submit
+/     =f.submit -->
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.label :instruments %>
+    <%= f.text_field :instruments %>
+  </p>
+
+  <p>
+    <%= f.label :interests %>
+    <%= f.text_field :interests %>
+  </p>
+
+  <p>
+    <%= f.label :dob, 'Date of birth' %>
+    <%= f.text_field :dob %>
+  </p>
+
+  <p>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+
+  <%= f.submit %>
+  <% end %>
