@@ -4,7 +4,7 @@
 <ol>
   <% @locations.each do |loc| %>
       <li>
-        <%= loc.name + ', ' %>
+        <%= link_to(loc.name, loc) + ', ' %>
         <%= loc.instruments %>
       </li>
     <% end %>

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150601084143) do
   create_table "conversations", force: :cascade do |t|
   end
 
-  create_table "conversations_users", force: :cascade do |t|
+  create_table "conversations_users", id: false, force: :cascade do |t|
     t.integer "conversation_id"
     t.integer "user_id"
   end

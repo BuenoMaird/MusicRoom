@@ -2,7 +2,6 @@ module ApplicationHelper
   def intellinav
     nav = ''
     if @current_user.present? && @current_user.admin?
-      raise params.inspect
       nav+= '<li>' + link_to('Show users', users_path) + '</li>'
     end
     if @current_user.present?

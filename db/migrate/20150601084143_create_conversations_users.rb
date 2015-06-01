@@ -1,6 +1,6 @@
 class CreateConversationsUsers < ActiveRecord::Migration
   def change
-    create_table :conversations_users do |t|
+    create_table :conversations_users, :id => false do |t|
       t.integer :conversation_id
       t.integer :user_id
     end
