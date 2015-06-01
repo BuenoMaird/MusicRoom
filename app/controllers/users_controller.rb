@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   end
 
   def create
+    if request.remote_ip === "::1"
+      request.remote_ip = "202.171.181.44"
+    end
+    params[:user][:ip_address] = request.remote_ip 
     @user = User.new user_params
     if @user.save
       redirect_to root_path
@@ -29,6 +33,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = @current_user
+    user.update user_params
+    redirect_to root_path
+
   end
 
   def destroy
@@ -36,7 +44,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation, :instruments, :interests, :image, :dob, :website)
+    params.require(:user).permit(:name, :password, :password_confirmation, :instruments, :interests, :image, :dob, :website, :ip_address, :latitude, :longtitude)
   end
 
   def check_if_admin

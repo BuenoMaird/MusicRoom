@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+ *{
+  box-sizing: border-box;
+ }
+
+ textarea:focus, input:focus{
+    outline: 0;
+}
+
+ .container{
+  max-width: 960px;
+  margin: 0 auto;
+ }
+
+ input{
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  min-height: 50px;
+  font-size: 1.4em;
+  font-family: helvetica;
+  box-shadow: 1px 4px 10px black;
+ }
+
+ input:active{
+  box-shadow: 1px 4px 5px black;
+  background-color: blue;
+ }
+
+ input:focus{
+  background-color: gray;
+  box-shadow: 1px 4px 2px black;
+ }
+
+label{
+  min-height: 20px;
+  min-width: 100px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+form{
+  display: inline-block;
+}

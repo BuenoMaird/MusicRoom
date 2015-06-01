@@ -7,19 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <nav>
+      <ul>
+      <li><%= link_to('Home', root_path) %></li>
+        <%== intellinav %>
+      </ul>
+    </nav>
 
-<nav>
-  <ul>
-  <li><%= link_to('Home', root_path) %></li>
-    <%== intellinav %>
-  </ul>
-</nav>
+    <% if flash[:notice].present? %>
+      <h2><%= flash[:notice] %></h2>
+    <% end %>
 
-<% if flash[:notice].present? %>
-  <h2><%= flash[:notice] %></h2>
-<% end %>
-
-<%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
