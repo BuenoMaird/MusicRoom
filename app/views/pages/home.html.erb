@@ -1,7 +1,14 @@
 
 <% if @current_user %>
 <h1>Welcome to the music room <%= @current_user.name %>! </h1>
-  @current_user
+<ol>
+  <% @locations.each do |loc| %>
+      <li>
+        <%= loc.name + ', ' %>
+        <%= loc.instruments %>
+      </li>
+    <% end %>
+
 <% else %>
 
 <h1>Welcome to the music room!</h1>
