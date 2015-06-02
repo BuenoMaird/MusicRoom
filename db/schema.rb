@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601084143) do
+ActiveRecord::Schema.define(version: 20150602011949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,33 @@ ActiveRecord::Schema.define(version: 20150601084143) do
     t.integer "user_id"
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "discussions", ["recipient_id"], name: "index_discussions_on_recipient_id", using: :btree
+  add_index "discussions", ["sender_id"], name: "index_discussions_on_sender_id", using: :btree
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "conversation_id"
   end
+
+  create_table "texts", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "discussion_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "texts", ["discussion_id"], name: "index_texts_on_discussion_id", using: :btree
+  add_index "texts", ["user_id"], name: "index_texts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -47,4 +68,6 @@ ActiveRecord::Schema.define(version: 20150601084143) do
     t.string   "ip_address"
   end
 
+  add_foreign_key "texts", "discussions"
+  add_foreign_key "texts", "users"
 end

@@ -18,7 +18,11 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
-resources :users, :except => [:edit] do #has to be in an array. Don't not to put it in an array you fuck
+  resources :discussions do
+    resources :texts
+  end
+
+resources :users, :texts, :except => [:edit] do #has to be in an array. Don't not to put it in an array you fuck
     collection do
       get '/edit' => 'users#edit'
     end
