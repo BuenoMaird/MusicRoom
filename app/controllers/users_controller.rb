@@ -36,10 +36,13 @@ class UsersController < ApplicationController
     user = @current_user
     user.update user_params
     redirect_to root_path
-
   end
 
   def destroy
+    user = User.find params[:id]
+    session[:user_id] = nil
+    user.destroy
+    redirect_to users_path
   end
 
   private

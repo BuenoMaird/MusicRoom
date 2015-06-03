@@ -8,6 +8,16 @@
         <%= loc.instruments %>
       </li>
     <% end %>
+
+    <% @locations.each_with_index do |user, index| %>
+    <ul>
+      <li><%= user.name %></li>
+      <li>
+        <%= link_to "Send Message", discussions_path, class: "btn btn-success btn-xs start-discussion",
+          "data-sid" => @current_user.id, "data-rip" => user.id %>
+      </li>
+    </ul>
+<% end %>
     
 
 <% else %>

@@ -20,7 +20,7 @@
 
 class User < ActiveRecord::Base
 
-  has_many :discussions, :foreign_key => :sender_id
+  has_many :discussions, :foreign_key => :sender_id, dependent: :destroy
 
   has_secure_password
   validates :name, :presence => true

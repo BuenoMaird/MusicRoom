@@ -7,8 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-Conversation.destroy_all
-Message.destroy_all
 
 
 
@@ -20,14 +18,4 @@ u3 = User.create( :name => "Steve", :instruments => "Roli Seaboard, Teenage Engi
 
 u4 = User.create( :name => "Barry", :instruments => "Roli Seaboard, Teenage Engineering OP-1, Eigenharp", :interests => "Being hipster", :website => "https://www.roli.com/products/seaboard-grand", :image => "http://bigcitymusic.com/images/op1_3_5842.jpg", :dob => "01/01/1901", :password => "Barry", :password_confirmation => "Barry", :ip_address => "121.44.3.96" )
 
-c1 = Conversation.create
-c2 = Conversation.create
-c3 = Conversation.create
-
-# m1 = Message.create( :conversation_id => 1, :content => 'Hello world from message 1')
-# m2 = Message.create( :conversation_id => 2, :content => 'Hello world from message 2')
-m3 = Message.create( :content => 'Hello world from message 3')
-
-c1.messages << m3
-u1.conversations << c1
 
