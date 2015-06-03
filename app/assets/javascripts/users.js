@@ -13,6 +13,7 @@ var ready = function () {
         var recipient_id = $(this).data('rip');
  
         $.post("/discussions", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
+            console.log("Chat with about to be called.");
             chatBox.chatWith(data.discussion_id);
         });
     });
@@ -58,7 +59,7 @@ var ready = function () {
  
     $('a.discussion').click(function (e) {
         e.preventDefault();
- 
+        console.log("a.discussion clicked")
         var discussion_id = $(this).data('cid');
         chatBox.chatWith(discussion_id);
     });

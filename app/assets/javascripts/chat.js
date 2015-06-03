@@ -23,7 +23,7 @@ var ready = function () {
          */
  
         chatWith: function (discussion_id) {
- 
+            console.log("chatwith called")
             chatBox.createChatBox(discussion_id);
             $("#chatbox_" + discussion_id + " .chatboxtextarea").focus();
         },
@@ -35,6 +35,7 @@ var ready = function () {
          */
  
         close: function (discussion_id) {
+            console.log("close called")
             $('#chatbox_' + discussion_id).css('display', 'none');
             chatBox.restructure();
         },
@@ -44,6 +45,7 @@ var ready = function () {
          */
  
         notify: function () {
+            console.log("NOTIFY RUN")
             var audioplayer = $('#chatAudio')[0];
             audioplayer.play();
         },
@@ -55,6 +57,7 @@ var ready = function () {
          */
  
         restructure: function () {
+            console.log("restructure run")
             align = 0;
             for (x in chatBoxes) {
                 chatbox_id = chatBoxes[x];
@@ -85,6 +88,7 @@ var ready = function () {
          */
  
         createChatBox: function (discussion_id, minimizeChatBox) {
+            console.log("createChatBox called")
             if ($("#chatbox_" + discussion_id).length > 0) {
                 if ($("#chatbox_" + discussion_id).css('display') == 'none') {
                     $("#chatbox_" + discussion_id).css('display', 'block');
@@ -170,6 +174,7 @@ var ready = function () {
          */
  
         checkInputKey: function (event, chatboxtextarea, discussion_id) {
+            console.log("checkInputKey called")
             if (event.keyCode == 13 && event.shiftKey == 0) {
                 event.preventDefault();
  
@@ -182,6 +187,7 @@ var ready = function () {
                     $(chatboxtextarea).focus();
                     $(chatboxtextarea).css('height', '44px');
                 }
+                console.log("CHECK checkInputKey called")
             }
  
             var adjustedHeight = chatboxtextarea.clientHeight;
@@ -206,6 +212,7 @@ var ready = function () {
          */
  
         toggleChatBoxGrowth: function (discussion_id) {
+            console.log("toggleChatBoxGrowth");
             if ($('#chatbox_' + discussion_id + ' .chatboxcontent').css('display') == 'none') {
  
                 var minimizedChatBoxes = new Array();
@@ -261,6 +268,7 @@ var ready = function () {
      */
  
     jQuery.cookie = function (name, value, options) {
+        console.log("cookie called")
         if (typeof value != 'undefined') { // name and value given, set cookie
             options = options || {};
             if (value === null) {
