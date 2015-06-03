@@ -14,49 +14,187 @@
  *= require_self
  */
 
+ @import url(http://fonts.googleapis.com/css?family=Raleway);
+
+ $brand-color: rgba(88, 181, 203, 1); 
+
+ $secondary-color: rgba(90, 209, 224, 1);
+
+ $dark-grey: rgba(54, 56, 56, 1);
+
+ $light-grey: rgba(106, 110, 110, 1);
+
+
+
+
+
  *{
   box-sizing: border-box;
+ }
+
+ body{
+  background-color: $brand-color;
+  margin: 0;
+ }
+
+ .container{
+  padding: 50px;
+  padding-top: 150px;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: $secondary-color;
+  border-radius: 20px
+ }
+
+ nav{
+  position: fixed;
+  background-color: $light-grey;
+  box-shadow: 4px 0px 10px $dark-grey;
+  border-bottom: 4px solid $dark-grey;
+  line-height: 100px;
+  width: 100%;
+  min-height: 100px;
+  display: block;
+  margin: 0 auto;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li{
+      color: white;
+      text-decoration: none;
+      font-family: 'Raleway';
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0px 60px;
+
+      a{
+        color: white;
+        text-decoration: none;
+    }
+   }
+  }
+ }
+
+
+ h1{
+  text-align: center;
+  font-family: 'helvetica';
+  width: 50%;
+  margin: 0 auto;
+  color: $dark-grey
+ }
+
+ .signupH1{
+  // font-weight: bold;
+  box-shadow: 0px 6px 10px $dark-grey;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+  height: 200px;
+  width: 200px;
+  line-height: 200px;
+  background-color: $brand-color;
+  border-radius: 100%;
+ }
+
+ .SignInErrors{
+  display: block;
+  font-size: 15px;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  color: red;
+  font-family: 'Raleway';
+  transition: 5s
+ }
+
+ .signUpRight{
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 30px;
+ }
+
+ .signUpLeft{
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 30px;
+ }
+
+ .locatedUsers{
+  text-align: center;
+  list-style: none;
+  height: 200px;
+  background-color: $light-grey;
+  padding: 20px;
+ }
+
+ .usersContainerLeft{
+  display: inline-block;
+  width: 40%;
+ }
+
+ .usersContainerRight{
+  display: inline-block;
+  width: 40%;
+ }
+
+ .userImageContainer{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden
+ }
+
+ .userImage{
+  width: 300px;
  }
 
  textarea:focus, input:focus{
     outline: 0;
 }
 
- .container{
-  max-width: 960px;
-  margin: 0 auto;
- }
-
  input{
-  padding-left: 10px;
-  padding-right: 10px;
-  color: white;
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  padding: 0px 10px;
+  color: black;
   cursor: pointer;
   border: none;
   border-radius: 20px;
-  min-height: 50px;
-  font-size: 1.4em;
+  min-height: 30px;
+  font-size: 1em;
   font-family: helvetica;
   box-shadow: 1px 4px 10px black;
- }
-
- input:active{
-  box-shadow: 1px 4px 5px black;
-  background-color: blue;
+  transition: 0.5s;
  }
 
  input:focus{
+  transition: background-color 0.5s ease;
   background-color: gray;
-  box-shadow: 1px 4px 2px black;
+  box-shadow: 0px 2px 2px black;
+  color: white
  }
 
 label{
+  color: white;
+  margin: 10px 0px;
+  font-family: 'Raleway';
+  text-transform: uppercase;
   min-height: 20px;
   min-width: 100px;
-  display: inline-block;
+  text-align: center;
+  font-size: 1.4em;
+  display: block;
   border-radius: 20px;
 }
 
 form{
-  display: inline-block;
+  display: block;
 }

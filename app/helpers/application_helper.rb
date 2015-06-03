@@ -10,7 +10,7 @@ module ApplicationHelper
       nav += '<li>' + link_to('Delete', @current_user, :method => :delete, data: {confirm: "Are you sure you want to delete your profile?"}) + '</li>'
 
     else
-      nav += '<li>' + link_to('Sign Up', new_user_path) + '</li>'
+      nav += '<li>' + link_to('Sign Up', new_user_path) + '</li> '
       nav += '<li>' + link_to('Login', login_path) + '</li>'
     end
 

@@ -8,17 +8,17 @@
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= csrf_meta_tags %>
 </head>
+<nav>
+  <ul>
+  <li><%= link_to('Home', root_path) %></li>
+    <%== intellinav %>
+  </ul>
+</nav>
 <body>
   <div class="container">
-    <nav>
-      <ul>
-      <li><%= link_to('Home', root_path) %></li>
-        <%== intellinav %>
-      </ul>
-    </nav>
 
     <% if flash[:notice].present? %>
-      <h2><%= flash[:notice] %></h2>
+      <h2 class="failedNotice"><%= flash[:notice] %></h2>
     <% end %>
 
     <%= yield %>

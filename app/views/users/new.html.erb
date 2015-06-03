@@ -17,16 +17,18 @@
 /   %p
 /     =f.label :submit
 /     =f.submit -->
+<h1 class="signupH1">Sign up</h1>
 
 <% if (@user.errors.any?) %>
-  <ol>
-    <%= @user.errors.full_messages.each do |msg| %>
+  <ol class="SignInErrors">
+    <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ol>
 <% end %>
 
 <%= form_for @user do |f| %>
+<div class="signUpRight">
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -46,7 +48,9 @@
     <%= f.label :instruments %>
     <%= f.text_field :instruments %>
   </p>
+</div>
 
+<div class="signUpLeft">
   <p>
     <%= f.label :interests %>
     <%= f.text_field :interests %>
@@ -66,6 +70,7 @@
     <%= f.label :website %>
     <%= f.text_field :website %>
   </p>
+</div>
 
   <%= f.submit %>
   <% end %>

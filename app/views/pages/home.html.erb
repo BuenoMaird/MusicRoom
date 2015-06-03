@@ -1,21 +1,26 @@
 
 <% if @current_user %>
 <h1>Welcome to the music room <%= @current_user.name %>! </h1>
-<ol>
-  <% @locations.each do |loc| %>
-      <li>
-        <%= link_to(loc.name, loc) + ', ' %>
-        <%= loc.instruments %>
-      </li>
-    <% end %>
 
     <% @locations.each_with_index do |user, index| %>
     <ul>
-      <li><%= user.name %></li>
-      <li>
-        <%= link_to "Send Message", discussions_path, class: "btn btn-success btn-xs start-discussion",
-          "data-sid" => @current_user.id, "data-rip" => user.id %>
-      </li>
+      <div class="locatedUsers">
+        <div class="usersContainerLeft">
+          <li><%= link_to(user.name, user) %></li>
+          <div class="userImageContainer">
+            <li><%= image_tag(user.image, :class => "userImage") %></li>
+          </div>
+        </div>
+        <div class="usersContainerRight">
+          <li>Instruments: <%= user.instruments %></li>
+          <li>Interests: <%= user.interests %></li>
+          <li><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-discussion",
+            "data-sid" => @current_user.id, "data-rip" => user.id %></li>
+        </div>
+            <!-- The Hash is in the link above because it's an ajax request and we don't actually want to follow any link. -->
+        </li>
+
+      </div>
     </ul>
 <% end %>
     
