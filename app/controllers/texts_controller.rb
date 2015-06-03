@@ -5,7 +5,7 @@ class TextsController < ApplicationController
     @text = @discussion.texts.build(text_params)
     @text.user_id = @current_user.id
     @text.save!
-    PrivatePub.publish_to("/discussions/#{@discussion.id}/new", "alert")
+    PrivatePub.publish_to("/discussions/#{@discussion.id}/new", "alert('#{@text.body}');")
  
     @path = discussion_path(@discussion)
   end
