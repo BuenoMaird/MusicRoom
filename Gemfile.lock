@@ -126,6 +126,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    psych (2.0.13)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.1)
@@ -223,6 +224,7 @@ DEPENDENCIES
   private_pub
   pry-rails
   pry-stack_explorer
+  psych
   quiet_assets
   rails (= 4.2.1)
   rails_12factor

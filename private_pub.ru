@@ -1,6 +1,7 @@
 # Run with: rackup private_pub.ru -s thin -E production
+
+require 'YAML'
 require "bundler/setup"
-require "YAML"
 require "faye"
 require "private_pub"
 
