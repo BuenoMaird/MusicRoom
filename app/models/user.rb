@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
   validates :password, :presence => true
   validates :instruments, :presence => true
+  validates :dob, :presence => true
 
   geocoded_by :ip_address,
   :latitude => :lat, :longitude => :lon
