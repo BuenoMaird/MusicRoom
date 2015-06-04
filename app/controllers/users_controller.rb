@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = @current_user
-    render :new
+    render :edit
   end
 
   def show
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    # raise "aids aids aids"
     user = @current_user
     user.update user_params
     redirect_to root_path

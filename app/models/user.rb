@@ -23,8 +23,10 @@ class User < ActiveRecord::Base
   has_many :discussions, :foreign_key => :sender_id, dependent: :destroy
 
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }, if: ->(record) { record.new_record? || record.password.present? || record.password_confirmation.present?  }
+
   validates :name, :presence => true
-  validates :password, :presence => true
+  # validates :password, :presence => true
   validates :instruments, :presence => true
   validates :dob, :presence => true
 

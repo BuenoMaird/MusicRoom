@@ -16,7 +16,7 @@
           <h3>Instruments:</h3>
           <li><%= user.instruments %></li>
           <h3>Genre interests:</h3>
-          <li>Interests: <%= user.interests %></li>
+          <li><%= user.interests %></li>
           <li class="messageButton"><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-discussion",
             "data-sid" => @current_user.id, "data-rip" => user.id %></li>
         </div>
