@@ -173,7 +173,7 @@
   padding: 20px;
   border-radius: 50px 50px 0px 50px;
   box-shadow: 1px 5px 5px $dark-grey;
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
  }
 
  .locatedUsers:hover{
@@ -228,7 +228,7 @@
  }
 
  .userImage{
-  border-radius: 50%;
+  border-radius:20px;
   width: 100%;
  }
 

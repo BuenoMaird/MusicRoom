@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     if request.remote_ip === "::1"
-      request.remote_ip = "202.171.181.44"
+      request.remote_ip = "140.168.135.1"
     end
     params[:user][:ip_address] = request.remote_ip 
     @user = User.new user_params
