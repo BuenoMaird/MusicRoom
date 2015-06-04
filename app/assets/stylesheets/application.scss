@@ -375,11 +375,11 @@ form{
 .podbar {
     bottom:0;
     position:fixed;
-    z-index:150;
+    z-index:0;
     _position:absolute;
     _top:expression(eval(document.documentElement.scrollTop+
         (document.documentElement.clientHeight-this.offsetHeight)));
-    height:60px;
+    height:65px;
 }
 
 footer{
