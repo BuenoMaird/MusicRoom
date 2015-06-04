@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :texts
   end
 
-resources :users, :texts, :except => [:edit] do #has to be in an array. Don't not to put it in an array you fuck
+resources :users, :texts, :except => [:edit] do #has to be in an array. Don't not put it in an array.
     collection do
       get '/edit' => 'users#edit'
     end

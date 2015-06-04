@@ -280,10 +280,17 @@
   display: inline-block;
   width: 49%;
   vertical-align: top;
+  max-height: 300px;
+  border-radius: 20px;
 
   li{
     display: inline-block;
   }
+ }
+
+ .userImage{
+  max-width: 350px;
+  max-height: 350px;
  }
 
  .locatedUsersContainerRight{
