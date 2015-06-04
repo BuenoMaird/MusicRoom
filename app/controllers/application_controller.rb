@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
-    @current_user = User.find session[:user_id] if session[:user_id] #this if statement checks if a current user is logged in. If they aren't then it doesn't display the user id but still lets them access the page.
+    @current_user = User.find_by :id => session[:user_id] if session[:user_id]
+    session[:user_id] = nil unless @current_user #this if statement checks if a current user is logged in. If they aren't then it doesn't display the user id but still lets them access the page.
   end
 end
