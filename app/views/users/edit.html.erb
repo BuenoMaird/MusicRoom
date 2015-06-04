@@ -1,2 +1,44 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% if (@user.errors.any?) %>
+  <ol class="SignInErrors">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+<div class="signUpRight">
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :instruments %>
+    <%= f.text_field :instruments %>
+  </p>
+    <p>
+    <%= f.label :interests %>
+    <%= f.text_field :interests %>
+  </p>
+</div>
+
+<div class="signUpLeft">
+
+  <p>
+    <%= f.label :dob, 'Date of birth' %>
+    <%= f.text_field :dob %>
+  </p>
+
+  <p>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+</div>
+
+  <%= f.submit %>
+  <% end %>

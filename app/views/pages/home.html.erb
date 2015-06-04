@@ -5,16 +5,19 @@
     <% @locations.each_with_index do |user, index| %>
     <ul>
       <div class="locatedUsers">
-        <div class="usersContainerLeft">
-          <li><%= link_to(user.name, user) %></li>
-          <div class="userImageContainer">
+        <div class="locatedUsersContainerLeft">
+          <div class="locatedUserImageContainer">
             <li><%= image_tag(user.image, :class => "userImage") %></li>
           </div>
         </div>
-        <div class="usersContainerRight">
-          <li>Instruments: <%= user.instruments %></li>
+        <div class="locatedUsersContainerRight">
+          <h3>Name:</h3>
+          <li><%= link_to(user.name, user) %></li>
+          <h3>Instruments:</h3>
+          <li><%= user.instruments %></li>
+          <h3>Genre interests:</h3>
           <li>Interests: <%= user.interests %></li>
-          <li><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-discussion",
+          <li class="messageButton"><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-discussion",
             "data-sid" => @current_user.id, "data-rip" => user.id %></li>
         </div>
             <!-- The Hash is in the link above because it's an ajax request and we don't actually want to follow any link. -->
@@ -27,7 +30,9 @@
 
 <% else %>
 
-<h1>Welcome to the music room!</h1>
+<div class="welcomeMessage">
+  <h1>Welcome to the Music Room!</h1>
+</div>
 <p>Sign up to search your area for delicious musicians</p>
 
 <% end %>

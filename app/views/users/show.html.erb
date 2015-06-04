@@ -1,2 +1,11 @@
-<h2><%= @user.name %></h2>
-<h2><%= @user.dob.strftime '%A %e %B, %Y' %></h2>
+<div class="userProfileLeft">
+  <%=  image_tag(@user.image) %>
+</div>
+
+<div class="userProfileRight">
+  <h2>Name: <%= @user.name %></h2>
+  <h3>Born: <span><%= @user.dob.strftime '%A %e %B, %Y' %><span></h3>
+  <h3>Instruments: <span><%= @user.instruments %><span></h3>
+  <h3>Genre Interests: <span><%= @user.interests %><span></h3>
+  <h3>Website: <span><%= link_to("Visit their website ", @user.website) %><span></h3>
+</div>

@@ -24,12 +24,19 @@
 
  $light-grey: rgba(106, 110, 110, 1);
 
+ $light-blue: rgba(209, 244, 255, 1);
+
+ $main-font: 'Raleway';
 
 
 
 
  *{
   box-sizing: border-box;
+ }
+
+ ul{
+  padding: 0;
  }
 
  body{
@@ -40,10 +47,11 @@
  .container{
   padding: 50px;
   padding-top: 150px;
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   background-color: $secondary-color;
-  border-radius: 20px
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px  $dark-grey
  }
 
  nav{
@@ -59,13 +67,12 @@
 
   ul{
     margin: 0;
-    padding: 0;
     text-align: center;
 
     li{
       color: white;
       text-decoration: none;
-      font-family: 'Raleway';
+      font-family: $main-font;
       text-transform: uppercase;
       display: inline-block;
       margin: 0px 60px;
@@ -78,6 +85,11 @@
   }
  }
 
+ .welcomeMessage{
+  height: 300px;
+  padding-top: 50px;
+  font-size: 2.5em;
+ }
 
  h1{
   text-align: center;
@@ -109,7 +121,7 @@
   text-align: center;
   padding: 0;
   color: red;
-  font-family: 'Raleway';
+  font-family: $main-font;
   transition: 5s
  }
 
@@ -125,33 +137,99 @@
   margin-bottom: 30px;
  }
 
+ .userProfileRight{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  overflow: hidden;
+  font-family: $main-font;
+
+  h2{
+    font-size: 2em;
+  }
+
+  span{
+    font-style: italic;
+  }
+ }
+
+ .userProfileLeft{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+
+  img{
+    overflow:hidden;
+    max-width: 50%;
+    max-height: 100%;
+  }
+ }
+
  .locatedUsers{
   text-align: center;
   list-style: none;
-  height: 200px;
-  background-color: $light-grey;
+  height: 400px;
+  background-color: $light-blue;
   padding: 20px;
+  border-radius: 50px 50px 0px 50px;
+  box-shadow: 1px 5px 5px $dark-grey;
+  transition: 1s ease-in-out;
  }
 
- .usersContainerLeft{
+ .locatedUsers:hover{
+  box-shadow: 0px 2px 2px $dark-grey;
+  background-color: $brand-color;
+ }
+
+ .locatedUsersContainerLeft{
   display: inline-block;
-  width: 40%;
+  width: 49%;
+  vertical-align: top;
+
+  li{
+    display: inline-block;
+  }
  }
 
- .usersContainerRight{
+ .locatedUsersContainerRight{
   display: inline-block;
-  width: 40%;
+  width: 49%;
+  vertical-align: top;
+  font-family: $main-font;
+  text-align: left;
+
+  h3{
+    font-size: 1.6em;
+    margin: 20px 0;
+  }
+
+  li{
+    font-size: 1.2em;
+  }
+
+  .messageButton{
+    text-align: right;
+    margin-top: 40px; 
+
+    a{
+      font-size: 2em;
+      color: $dark-grey;
+      text-decoration: none;
+    }
+  }
  }
 
- .userImageContainer{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  overflow: hidden
+ .locatedUserImageContainer{
+  height: 500px;
+  width: 500px;
+  // border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
  }
 
  .userImage{
-  width: 300px;
+  border-radius: 50%;
+  width: 100%;
  }
 
  textarea:focus, input:focus{
@@ -185,7 +263,7 @@
 label{
   color: white;
   margin: 10px 0px;
-  font-family: 'Raleway';
+  font-family: $main-font;
   text-transform: uppercase;
   min-height: 20px;
   min-width: 100px;
