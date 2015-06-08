@@ -26,3 +26,26 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+The problem:
+
+The problem the app was trying to solve was the trouble of getting into the musical community when new to an area. The app is a solution to that problem by making a local place for all of the musicians within a local area to find each other in a place where they can chat and meet with people who are also interested in playing the same kind of music.
+
+How it works:
+
+The app works on geolocation which is derived from the individual ip_address of each user. It searches the local area (200km) to give you information about the peolpe around you, the intrusments they place and what they are interested in playing.
+
+The app also contains a built in live chat network which lets the users immediately message each other. This breaks down the barrier of that awkward first meeting.
+
+What I would like to improve:
+
+I would like to add disqus or something like it to the find users home page. I think having a global area where users can chat and meet would be a massive feature to have on the site so I may look at doing that. Also the design needs an overhaul. Especially the frontpage which due to time constraints didn't get the attention I wanted it to recieve.
+
+In conclusion: 
+Overall I'm pretty happy with the result. I definitely have a much better understanding of the CRUD system and databases. I am already thinking of other things I can build using these tools and look forward to starting some side projects. This stuff is awesome.
+
+Shout-outs.
+Thanks to Jack and Joel for the help getting the messager working and helping debug things when stuff all got a little out of hand. Proper champions. Also the members of WDI9 for helping crash test it and also on help debugging. You're all legends!
+
+Cool.

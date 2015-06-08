@@ -8,6 +8,7 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate( params[:password] )  
       session[:user_id] = user.id
       # user.ip_address = request.remote_ip
+      #This will get uncommented when it goes live. It resets the lat/lon on session based on the position of the users ip address.
       user.save 
       redirect_to root_path
     else

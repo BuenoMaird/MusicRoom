@@ -4,5 +4,5 @@ class PagesController < ApplicationController
     @locations = User.near([@current_user.lat, @current_user.lon],200, :units => :km)
   end
     # raise params.inspect
-  end
+  end 
 end

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     if request.remote_ip === "::1"
       request.remote_ip = "140.168.135.1"
+      #This is to test during local hosting because it sets the ip incorrectly.
     end
     params[:user][:ip_address] = request.remote_ip 
     @user = User.new user_params
