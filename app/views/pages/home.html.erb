@@ -7,7 +7,11 @@
       <div class="locatedUsers">
         <div class="locatedUsersContainerLeft">
           <div class="locatedUserImageContainer">
-            <li><%= image_tag(user.image, :class => "userImage") %></li>
+          <% if (user.image == ('')) %>
+            <%= image_tag('http://www.fillmurray.com/200/200', :class => "userImage") %>
+          <% else %>
+           <%= image_tag(user.image, :class => "userImage") %>
+          <% end %>
           </div>
         </div>
         <div class="locatedUsersContainerRight">
@@ -35,11 +39,29 @@
   </div>
 
   <div class="information">
-    <div class="informationLeft">
-      <h2>What is it?!</h2>
+    <div id="infoOne" class="infoBlock">
+      <div id="infoOnelogo">
+        <i class="fa fa-info fa-5x"></i>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis id ut dolorum numquam cumque dolore, error fugiat soluta, at nemo doloribus rerum consequatur sunt placeat amet. Reiciendis veniam et tempore.
+      </p>
     </div>
-    <div class="informationRight">
-      <p>Music room is an app which connects local musicians to other like minded people around their area. Giving them a place to chat and meet and do other musical things.</p>
+    <div id="infoTwo" class="infoBlock">
+      <div>
+        <i class="fa fa-users fa-5x"></i>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dignissimos pariatur itaque, quam iusto neque quod voluptates facere iste hic ab inventore sapiente accusamus nostrum voluptate facilis soluta id quaerat.
+      </p>
+    </div>
+    <div id="infoThr" class="infoBlock">
+      <div>
+        <i class="fa fa-comment fa-5x"></i>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tempore voluptates enim. Eaque mollitia sequi fugiat impedit voluptates aut recusandae sit temporibus eos amet sint, omnis quia laboriosam eligendi voluptatum!
+      </p>
     </div>
   </div>
 

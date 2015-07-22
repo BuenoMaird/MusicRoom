@@ -1,5 +1,9 @@
 <div class="userProfileLeft">
-  <%=  image_tag(@user.image) %>
+  <% if (@user.image == ('')) %>
+  <%=  image_tag('http://www.fillmurray.com/200/200') %>
+  <% else %>
+  <%= image_tag(@user.image) %>
+  <% end %>
 </div>
 
 <div class="userProfileRight">

@@ -5,7 +5,7 @@
   <meta content='<%= @user_signed_in?  current_user.id : "" %>' name='user-id'/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <nav>
@@ -25,9 +25,8 @@
     <audio id="chatAudio"><source src="/assets/messagesound.mp3" type="audio/mpeg"></audio>
   </div>
 
-<div class="podbar">
-  <footer></footer>
-</div>
+<!-- <footer></footer> -->
+
 
 </body>
 </html>

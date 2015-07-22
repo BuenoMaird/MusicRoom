@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -42,10 +42,11 @@
 
  h1{
   text-align: center;
-  font-family: 'helvetica';
-  width: 50%;
+  font-family: $main-font;
+  width: 100%;
   margin: 0 auto;
-  color: $dark-grey
+  color: $dark-grey;
+  // text-transform: uppercase;
  }
 
  .failedNotice{
@@ -61,23 +62,23 @@
  }
 
  body{
-  background-color: $brand-color;
+  // background-color: $dark-grey;  
   margin: 0;
  }
 
  .container{
   padding: 50px;
   padding-top: 150px;
-  max-width: 1400px;
+  max-width: 960px;
   margin: 0 auto;
-  background-color: $secondary-color;
-  border-radius: 20px;
-  box-shadow: 0px 0px 30px  $dark-grey
+  border-radius: 20px 20px 0px 0px;
+  // box-shadow: 0px 0px 30px  $dark-grey;
+  height: 100%;
  }
 
  nav{
   position: fixed;
-  opacity: 0.4;
+  // opacity: 0.4;
   background-color: $light-grey;
   box-shadow: 4px 0px 10px $dark-grey;
   border-bottom: 4px solid $dark-grey;
@@ -86,6 +87,7 @@
   min-height: 100px;
   display: block;
   margin: 0 auto;
+  z-index: 99999; //To stop the fa logos from going over the top.
 
   ul{
     margin: 0;
@@ -115,28 +117,47 @@
     min-height: 300px;
     font-size: 2.5em;
     padding-top: 50px;
+    
   }
-  .information{
-    background-color: $light-blue;
-    border-radius: 20px 20px 20px 0px;
-    min-height: 300px;
-    border-top: 5px solid $dark-grey;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.7em;
-    padding: 0 20px;
+  // .information{
+  //   background-color: $light-blue;
+  //   border-radius: 20px 20px 20px 0px;
+  //   min-height: 300px;
+  //   border-top: 5px solid $dark-grey;
+  //   margin-bottom: 20px;
+  //   text-align: center;
+  //   font-size: 1.7em;
+  //   padding: 0 20px;
 
-    .informationLeft{
-      line-height: 250px;
-      display: inline-block;
-      vertical-align: top;
-      width: 60%;
-    }
-    .informationRight{
-      display: inline-block;
-      vertical-align: top;
-      width: 39%;
-   }
+  //   .informationLeft{
+  //     line-height: 250px;
+  //     display: inline-block;
+  //     vertical-align: top;
+  //     width: 60%;
+  //   }
+  //   .informationRight{
+  //     display: inline-block;
+  //     vertical-align: top;
+  //     width: 39%;
+  //  }
+  // }
+
+  #infoLogoOne{
+    z-index: -999;
+  }
+
+  .infoBlock{
+    width: 33.3%;
+    display: inline-block;
+    margin: -2px; //display inline gap issue
+    min-height: 300px;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #infoOne{
+    margin-left: 1px; //display-inline gap issue
   }
  
 
@@ -263,12 +284,12 @@
  .locatedUsers{
   text-align: center;
   list-style: none;
-  height: 400px;
-  background-color: $light-blue;
+  height: 200px;
+  background-color: $dark-grey;
   padding: 20px;
   border-radius: 50px 50px 0px 50px;
   box-shadow: 1px 5px 5px $dark-grey;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
  }
 
  .locatedUsers:hover{
@@ -280,7 +301,8 @@
   display: inline-block;
   width: 49%;
   vertical-align: top;
-  max-height: 300px;
+  max-height: 100%;
+  padding-left: 40px;
   border-radius: 20px;
 
   li{
@@ -289,12 +311,15 @@
  }
 
  .userImage{
-  max-width: 350px;
-  max-height: 350px;
+  width: 100%;
+  height: 100%;
  }
 
  .locatedUsersContainerRight{
+  color: white;
+  max-height: 100%;
   display: inline-block;
+  overflow: scroll;
   width: 49%;
   vertical-align: top;
   // font-family: $main-font;
@@ -307,30 +332,31 @@
 
   li{
     font-size: 1.2em;
+    a{
+      font-size: 1em;
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   .messageButton{
     text-align: right;
     margin-top: 40px; 
-
-    a{
-      font-size: 2em;
-      color: $dark-grey;
-      text-decoration: none;
-    }
   }
  }
 
  .locatedUserImageContainer{
-  height: 500px;
-  width: 500px;
-  // border-radius: 50%;
+  max-height: 40%;
+  max-width: 40%;
+  // margin: 0 auto;
+  border-radius: 50%;
   overflow: hidden;
-  display: inline-block;
+  border: 5px solid white;
+  // margin: 30px;
  }
 
  .userImage{
-  border-radius:20px;
+  // border-radius:20px;
   width: 100%;
  }
 
@@ -346,12 +372,11 @@
   padding: 0px 10px;
   color: black;
   cursor: pointer;
-  border: none;
-  border-radius: 20px;
+  border:none;
+  border-bottom: 1px solid black;
   min-height: 30px;
   font-size: 1em;
   font-family: helvetica;
-  box-shadow: 1px 4px 10px black;
   transition: 0.5s;
  }
 
@@ -363,7 +388,7 @@
  }
 
 label{
-  color: white;
+  color: black;
   margin: 10px 0px;
   // font-family: $main-font;
   text-transform: uppercase;
@@ -390,14 +415,14 @@ form{
 }
 
 footer{
-  position: fixed;
+  // position: fixed;
   opacity: 0.4;
   background-color: $light-grey;
   box-shadow: -4px 0px 5px $dark-grey;
   border-top: 4px solid $dark-grey;
   line-height: 100px;
   width: 100%;
-  height: 400px;
+  height: 200px;
   display: block;
   margin: 0 auto;
 }
